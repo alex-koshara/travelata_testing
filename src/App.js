@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
 import './App.css';
+import Button from './components/Button/Button';
 import CardList from './components/CardList/CardList'
 import Cart from './components/Cart/Cart';
 import Context from './context';
-import storage from './utils/storage';
+import { storage, clearStorage } from './utils/storage';
+
+console.log(storage, clearStorage);
 
 function App() {
   const MIN_COUNT_CARD = 0;
@@ -85,6 +88,11 @@ function App() {
           ? (<div className="main">
               <CardList cards={cards} categoryCount={categoryCount} />
               <Cart cards={cards} />
+              <Button
+                  clickHandler={clearStorage}
+                  classButton='button--clear'
+                  operation='clear'
+                  content='Очистить localStorage'/>
             </div>)
           : (loading ? null : <p>No cards</p>)
         }

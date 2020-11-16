@@ -23,7 +23,7 @@ function Card({card, index}) {
           operation='add'
           content='Добавить в корзину'/>
       </p>
-      {isMaxPerPerson && <span class="card__max-per-person">К сожалению данный товар ограничен за одну покупку. Вы можете приобрести не более {card.maxPerPerson} шт.</span>}
+      {isMaxPerPerson && <span className="card__max-per-person">К сожалению данный товар ограничен за одну покупку. Вы можете приобрести не более {card.maxPerPerson} шт.</span>}
     </li>
   )
 }

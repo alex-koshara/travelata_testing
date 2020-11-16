@@ -1,4 +1,4 @@
-function storage(key, data) {
+export function storage(key, data) {
   if (!data) {
     return JSON.parse(localStorage.getItem(key));
   }
@@ -6,4 +6,8 @@ function storage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
 
-export default storage;
+
+export function clearStorage() {
+  localStorage.clear();
+  window.location.reload();
+};
