@@ -3,7 +3,7 @@
   background: #000;
   border: none;
   padding: 6px;
-  border-radius: 5px;
+  border-radius: 7px;
   transition: color .3s, background .3s;
   box-sizing: border-box;
   cursor: pointer;
@@ -13,6 +13,7 @@
   color: black;
   background: white;
   border: 1px solid currentColor;
+  border-radius: 4px;
   padding: 5px;
 }
 
