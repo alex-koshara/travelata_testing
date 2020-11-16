@@ -30,3 +30,8 @@
   border: none;
   padding: 6px;
 }
+
+.button--clear {
+  margin: 0 auto;
+  margin-top: 20px;
+}
