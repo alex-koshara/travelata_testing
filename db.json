@@ -27,6 +27,13 @@
       "price": 10000,
       "amount": 0,
       "maxPerPerson": 1
+    }    ,
+    {
+      "id": 5,
+      "productName": "Спинер",
+      "price": 100,
+      "amount": 4,
+      "maxPerPerson": 4
     }
   ]
 }
