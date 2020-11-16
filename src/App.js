@@ -13,9 +13,13 @@ function App() {
 
   function recalculateCategoty(cards) {
     return cards.filter(card => {
-      const cartCount = card.countAddToCart || 0;
-      return ((card.amount - cartCount) > 0);
+      return checkAmount(card);
     }).length;
+  }
+
+  function checkAmount(card) {
+    const cartCount = card.countAddToCart || 0;
+    return (card.amount - cartCount) > 0 && (card.maxPerPerson - card.countAddToCart) > 0;
   }
 
   useEffect(() => {
@@ -24,7 +28,7 @@ function App() {
       setCategoryCount(recalculateCategoty(cards))
       setLoading(false)
     } else {
-      fetch('https://my-json-server.typicode.com/alex-koshara/travelata/products?_limit=5')
+      fetch('https://my-json-server.typicode.com/alex-koshara/travelata_testing/products?_limit=5')
         .then(response => response.json())
         .then(cards => {
           setCards(cards)
