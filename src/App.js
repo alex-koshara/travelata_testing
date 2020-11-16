@@ -19,7 +19,7 @@ function App() {
 
   function checkAmount(card) {
     const cartCount = card.countAddToCart || 0;
-    return (card.amount - cartCount) > 0 && (card.maxPerPerson - card.countAddToCart) > 0;
+    return (card.amount - cartCount) > 0 && (card.maxPerPerson - cartCount) > 0;
   }
 
   useEffect(() => {
