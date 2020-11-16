@@ -1,6 +1,7 @@
 import React from 'react';
 import CartItem from '../CartItem/CartItem';
-import './Cart.css'
+import './Cart.css';
+const plural = require('plural-ru');
 
 function Cart({cards}) {
   const cardsToCart = cards.filter(card => card.countAddToCart);
@@ -17,7 +18,7 @@ function Cart({cards}) {
         cardsToCart.length
         ? (
             <>
-              <h2>В корзине {cardCount} товаров на сумму {cartSum} рублей</h2>
+              <h2>В корзине {cardCount} {plural(cardCount, 'товар', 'товара', 'товаров')} на сумму {cartSum} рублей</h2>
               <ol>
                 {
                   cardsToCart.map((card, index) => {

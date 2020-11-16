@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import './Card.css';
 import Context from '../../context';
 import Button from '../Button/Button';
+const plural = require('plural-ru');
 
 function Card({card, index}) {
   const {setCart} = useContext(Context);
@@ -9,12 +10,13 @@ function Card({card, index}) {
   const amountPerPerson = card.maxPerPerson === (card.countAddToCart || 0);
   const isDisabledCardButton = !amount || amountPerPerson;
   const isMaxPerPerson = amount > 0 && amountPerPerson;
+  const name = card.productName;
 
   return (
     <li className="card">
       <p className="card__wrap">
         <b className="card__index">{index + 1}</b>
-        <span className="card__text">Осталось {amount} {card.productName} по {card.price} рублей</span>
+        <span className="card__text">Осталось {amount} {plural(amount, name, name + 'a', name + 'ов')} по {card.price} рублей</span>
         <Button
           id={card.id}
           disabled={isDisabledCardButton}

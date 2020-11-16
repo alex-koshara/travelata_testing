@@ -10,7 +10,7 @@ function CartItem({card, count, sum}) {
 
   return (
       <li className="CartItem">
-        <p>Телефон (
+        <p>{card.productName} (
           <Button
             id={card.id}
             clickHandler={setCart}
