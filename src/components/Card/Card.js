@@ -13,10 +13,10 @@ function Card({card, index}) {
   const name = card.productName;
 
   return (
-    <li className="card">
-      <p className="card__wrap">
-        <b className="card__index">{index + 1}</b>
-        <span className="card__text">Осталось {amount} {plural(amount, name, name + 'a', name + 'ов')} по {card.price} рублей</span>
+    <li className='card'>
+      <p className='card__wrap'>
+        <b className='card__index'>{index + 1}</b>
+        <span className='card__text'>Осталось {amount} {plural(amount, name, name + 'a', name + 'ов')} по {card.price} рублей</span>
         <Button
           id={card.id}
           disabled={isDisabledCardButton}
@@ -25,7 +25,7 @@ function Card({card, index}) {
           operation='add'
           content='Добавить в корзину'/>
       </p>
-      {isMaxPerPerson && <span className="card__max-per-person">К сожалению данный товар ограничен за одну покупку. Вы можете приобрести не более {card.maxPerPerson} шт.</span>}
+      {isMaxPerPerson && <span className='card__max-per-person'>К сожалению данный товар ограничен за одну покупку. Вы можете приобрести не более {card.maxPerPerson} шт.</span>}
     </li>
   )
 }

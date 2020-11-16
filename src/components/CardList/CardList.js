@@ -5,9 +5,9 @@ import Card from '../Card/Card';
 function CardList({cards, categoryCount}) {
 
   return (
-    <section className="card-list">
+    <section className='card-list'>
       <h2>Имеющиеся категории товаров {categoryCount}</h2>
-      <ul className="card-list__list">
+      <ul className='card-list__list'>
         {cards.map((card, index) => {
           return (
             <Card

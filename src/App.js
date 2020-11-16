@@ -82,10 +82,10 @@ function App() {
 
   return (
     <Context.Provider value={{ setCart }}>
-      <div className="container">
+      <div className='container'>
         {
           cards.length
-          ? (<div className="main">
+          ? (<div className='main'>
               <CardList cards={cards} categoryCount={categoryCount} />
               <Cart cards={cards} />
               <Button

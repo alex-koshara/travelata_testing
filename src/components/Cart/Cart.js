@@ -13,7 +13,7 @@ function Cart({cards}) {
   }, 0)
 
   return (
-    <div className="cart">
+    <div className='cart'>
       {
         cardsToCart.length
         ? (

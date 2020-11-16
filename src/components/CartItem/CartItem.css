@@ -1,7 +1,15 @@
+.cart-item__wrap {
+  display: flex;
+}
+
 .cart-item__button-add {
   margin-left: 5px;
 }
 
 .cart-item__button-remove {
   margin-right: 5px;
+}
+
+.cart-item__clear {
+  margin-left: auto;
 }

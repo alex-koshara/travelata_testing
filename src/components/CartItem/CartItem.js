@@ -9,8 +9,8 @@ function CartItem({card, count, sum}) {
   const isDisabledCardButton = amountPerPerson;
 
   return (
-      <li className="CartItem">
-        <p>{card.productName} (
+      <li className='cart-item'>
+        <p className='cart-item__wrap'>{card.productName} (
           <Button
             id={card.id}
             clickHandler={setCart}
@@ -25,13 +25,13 @@ function CartItem({card, count, sum}) {
             classButton='cart-item__button-add'
             operation='add'
             content='+'/>
-              ) на сумму {sum} рублей (
+              ) на сумму {sum} рублей
           <Button
             id={card.id}
             clickHandler={setCart}
+            classButton='cart-item__clear'
             operation='clear'
             content='удалить'/>
-          )
         </p>
       </li>
   )
