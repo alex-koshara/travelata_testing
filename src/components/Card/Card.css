@@ -6,7 +6,7 @@
 }
 
 .card:hover {
-  box-shadow: 2px 1px 1px rgba(0, 0, 0, .5);
+  box-shadow: 2px 1px 1px rgba(0, 0, 0, .3);
 }
 
 .card__index::after {
