@@ -8,6 +8,7 @@ function Card({card, index}) {
   const amount = card.amount - (card.countAddToCart || 0);
   const amountPerPerson = card.maxPerPerson === (card.countAddToCart || 0);
   const isDisabledCardButton = !amount || amountPerPerson;
+  const isMaxPerPerson = amount > 0 && amountPerPerson;
 
   return (
     <li className="card">
@@ -22,6 +23,7 @@ function Card({card, index}) {
           operation='add'
           content='Добавить в корзину'/>
       </p>
+      {isMaxPerPerson && <span class="card__max-per-person">К сожалению данный товар ограничен за одну покупку. Вы можете приобрести не более {card.maxPerPerson} шт.</span>}
     </li>
   )
 }
