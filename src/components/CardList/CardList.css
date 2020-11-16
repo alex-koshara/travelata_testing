@@ -1,0 +1,9 @@
+.card-list {
+  padding: 20px 10px;
+  border: 1px solid grey;
+  margin-right: 5px;
+}
+
+.card-list__list {
+  list-style: none;
+}

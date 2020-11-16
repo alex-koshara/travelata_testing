@@ -1,0 +1,16 @@
+.card__index::after {
+  content: ')';
+  margin-right: 10px;
+}
+
+.card__wrap {
+  display: flex;
+}
+
+.card__text {
+  margin-right: 10px;
+}
+
+.card__button {
+  margin-left: auto;
+}
