@@ -6,10 +6,12 @@ import Cart from './components/Cart/Cart';
 import Context from './context';
 import { storage, clearStorage } from './utils/storage';
 
-console.log(storage, clearStorage);
+const MIN_COUNT_CARD = 0;
+const LIMIT_CARDS = 5;
+const URL = 'https://my-json-server.typicode.com';
+const GITHUB_DB = 'alex-koshara/travelata_testing/products';
 
 function App() {
-  const MIN_COUNT_CARD = 0;
   const [cards, setCards] = React.useState(storage('cards') || []);
   const [loading, setLoading] = React.useState(true);
   const [categoryCount, setCategoryCount] = React.useState(0);
@@ -25,22 +27,23 @@ function App() {
     return (card.amount - cartCount) > 0 && (card.maxPerPerson - cartCount) > 0;
   }
 
+  function setAppDefaultSettings(cards) {
+    setCards(cards);
+    setCategoryCount(recalculateCategoty(cards));
+    setLoading(false);
+  }
+
   useEffect(() => {
     if (cards.length) {
-      setCards(cards);
-      setCategoryCount(recalculateCategoty(cards))
-      setLoading(false)
+      setAppDefaultSettings(cards);
     } else {
-      fetch('https://my-json-server.typicode.com/alex-koshara/travelata_testing/products?_limit=5')
+      fetch(`${URL}/${GITHUB_DB}?_limit=${LIMIT_CARDS}`)
         .then(response => response.json())
         .then(cards => {
-          setCards(cards)
-          setCategoryCount(recalculateCategoty(cards))
-          setLoading(false)
+          setAppDefaultSettings(cards);
         })
     }
   }, [])
-
 
   useEffect(() => {
     setCategoryCount(recalculateCategoty(cards))
@@ -59,7 +62,7 @@ function App() {
       case 'clear':
         return card.countAddToCart = 0;
       default:
-        return;
+        return card.countAddToCart = 0;;
     }
   }
 
